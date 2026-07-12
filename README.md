@@ -190,7 +190,7 @@ This starts PostgreSQL, Redis, and Neo4j. The app services still run from `apps/
 | `apps/web/app/investigation/page.tsx`        | Search UI for UPI, phone, domain, email, and Telegram             |
 | `apps/web/app/report/page.tsx`               | Printable investigation report with export button                 |
 
-## Hackathon Notes
+## Notes
 
 - The backend is already structured for a real pipeline, but several enrichment sources are demo-first or optional.
 - Neo4j is the main knowledge graph store; if it is offline, the graph service falls back to in-memory storage so the demo still works.
