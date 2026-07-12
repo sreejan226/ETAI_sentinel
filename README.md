@@ -190,7 +190,36 @@ This starts PostgreSQL, Redis, and Neo4j. The app services still run from `apps/
 | `apps/web/app/investigation/page.tsx`        | Search UI for UPI, phone, domain, email, and Telegram             |
 | `apps/web/app/report/page.tsx`               | Printable investigation report with export button                 |
 
-## Notes
+## Project Layout
+
+```text
+ETAI/
+├── apps/
+│   ├── ai/              # classifier, agentic report logic, risk scoring
+│   ├── api/             # FastAPI app, routes, database, pipeline, health checks
+│   ├── geo/             # hotspot and district risk logic
+│   ├── graph/           # Neo4j client and graph ingestion/query layer
+│   ├── osint/           # OSINT enrichment collector
+│   ├── reports/         # report generation helpers
+│   ├── shared/          # Pydantic schemas and utility helpers
+│   ├── web/             # Next.js frontend
+│   └── workers/         # Celery app and background workers
+├── scripts/             # local setup and PostgreSQL bootstrap scripts
+├── docker-compose.yml    # optional local infrastructure
+└── README.md             # setup guide and hackathon notes
+```
+
+### Frontend sub-tree
+
+```text
+apps/web/
+├── app/                 # pages and layouts
+├── components/          # shared UI shell and dashboard widgets
+├── lib/                 # static demo data used by the portal
+└── public/              # static assets
+```
+
+## Hackathon Notes
 
 - The backend is already structured for a real pipeline, but several enrichment sources are demo-first or optional.
 - Neo4j is the main knowledge graph store; if it is offline, the graph service falls back to in-memory storage so the demo still works.
