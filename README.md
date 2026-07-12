@@ -219,7 +219,7 @@ apps/web/
 └── public/              # static assets
 ```
 
-## Hackathon Notes
+## Notes
 
 - The backend is already structured for a real pipeline, but several enrichment sources are demo-first or optional.
 - Neo4j is the main knowledge graph store; if it is offline, the graph service falls back to in-memory storage so the demo still works.
